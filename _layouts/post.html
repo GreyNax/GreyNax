@@ -1,0 +1,19 @@
+---
+layout: page
+---
+
+<div class="px-4 pt-4">
+  <div class="text-center">
+    {% if page.tags.size !=0 %}
+      <i class="text-xs fas fa-tags"></i>
+      {% for tag in page.tags %}
+        <div class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+          <a class="!no-underline uppercase" href="{{site.baseurl}}/tag#{{ tag }}">{{ tag }}</a>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="prose prose-slate-800 dark:prose-neutral-50">
+    {{content}}
+  </div>
+</div>
